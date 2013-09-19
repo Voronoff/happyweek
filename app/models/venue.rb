@@ -1,3 +1,4 @@
 class Venue < ActiveRecord::Base
-	attr_accessible :name, :address, :city
+	has_many :deals
+	# attr_accessible :name, :address, :city
 end
