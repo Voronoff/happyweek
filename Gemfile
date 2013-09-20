@@ -35,6 +35,19 @@ end
 #ActiveAdmin just generally rocks
 gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
 
+#haml!
+gem 'haml-rails'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'spork-rails', github: 'sporkrb/spork-rails' # rubygems version not rails 4 compatible
+  gem 'guard-spork'
+  gem 'childprocess'
+  gem 'timecop'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
