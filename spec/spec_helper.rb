@@ -15,6 +15,12 @@ Spork.prefork do
   require 'rspec/autorun'
   ENV["RAILS_ENV"] ||= 'test'
 
+  require "rails/application"
+  Spork.trap_method(Rails::Application, :reload_routes!) # Rails 3.0
+  Spork.trap_method(Rails::Application::RoutesReloader, :reload!) # Rails 3.1
+
+  require File.dirname(__FILE__) + "/../config/environment.rb"
+
   RSpec.configure do |config|
     # ## Mock Framework
     #
@@ -43,11 +49,7 @@ Spork.prefork do
     #     --seed 1234
     config.order = "random"
   end
-  Spec::Runner.configure do |config|
-    config.after(:each) do
-      Timecop.return
-    end
-  end
+
 
 end
 
@@ -60,6 +62,9 @@ Spork.each_run do
   # Checks for pending migrations before tests are run.
   # If you are not using ActiveRecord, you can remove this line.
   ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
+
+  ActiveSupport::Dependencies.clear
+
 
 end
 
