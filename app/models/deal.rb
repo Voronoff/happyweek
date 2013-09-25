@@ -5,9 +5,7 @@ class Deal < ActiveRecord::Base
 		time_string, period = time_string.split(' ')
 		time_array = time_string.split(':')
 		time = (time_array[0].to_i * 60) + time_array[1].to_i
-		if period == "PM" && time_string != "12:00"
-			time += 720 
-		end
+		time += 720 if period == "PM" && time_string != "12:00"
 		return time
 	end
 
@@ -24,11 +22,11 @@ class Deal < ActiveRecord::Base
 	def self.current_deals
 		day = DateTime.now.strftime('%A')
 		time = Deal.time_i_to_str((Time.now.seconds_since_midnight.to_i / 60).to_i)
-		return self.deals_at_time(day, time)
+		self.deals_at_time(day, time)
 	end
 
 	def self.deals_at_time(day, time_string)
 		time = Deal.time_str_to_i(time_string)
-		return Deal.where("#{day.downcase} <> 'false' AND start_time <= :time AND end_time > :time", {time: time})
+		Deal.where("#{day.downcase} <> 'false' AND start_time <= :time AND end_time > :time", {time: time})
 	end
 end

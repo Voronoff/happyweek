@@ -20,6 +20,9 @@ describe Deal do
       Deal.time_str_to_i('2:30 PM').should eql(870)
       Deal.time_str_to_i('2:30 AM').should eql(150)
     end
+    it "handles noon correctly" do
+      Deal.time_str_to_i('12:00 PM').should eql(720)
+    end
     it "can convert time from int to string" do
       Deal.time_i_to_str(870).should eql('2:30 PM')
       Deal.time_i_to_str(150).should eql('2:30 AM')
