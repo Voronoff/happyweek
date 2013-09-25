@@ -11,6 +11,7 @@ describe Deal do
                 :thursday => DateTime.strptime('Thursday260913', '%A%d%m%y'),
                 :friday => DateTime.strptime('Friday270913', '%A%d%m%y'),
                 :saturday => DateTime.strptime('Saturday280913', '%A%d%m%y')}
+  TIME_ZONE = Time.now.zone
   end
   fixtures :deals
 
@@ -41,12 +42,20 @@ describe Deal do
   end
 
   describe ".current_deals" do
-    it "finds the current deals" do
-      Timecop.freeze(DateTime.strptime(DAY_DATES[:thursday].strftime('%d%m%y') + ' 01:30', '%d%m%y %H:%M'))
-      expect(Deal.current_deals).to have(2).records
-      expect(Deal.current_deals.where(:name => "Monkey head")).to have(0).records
+
+    before do
+      Timecop.freeze(DateTime.strptime(DAY_DATES[:thursday].strftime('%d%m%y') + ' 13:30 ' + TIME_ZONE, '%d%m%y %H:%M %Z'))
+      $stderr.puts DateTime.now.strftime('%A %H:%M')
     end
 
-    Timecop.return
+    after do
+      Timecop.return
+    end
+
+    it "finds the current deals" do
+      expect(Deal.current_deals).to have(2).records
+      expect(Deal.current_deals.where(:name => "Monkey head")).to have(1).record
+    end
+
   end
 end
