@@ -3,21 +3,31 @@ bottomless_mimosas:
   cost: 10.00
   start_time: 480
   end_time: 660
+  sunday: true
 
 monkey_head:
   name: "Monkey head"
   cost: 9.00
   start_time: 720
   end_time: 1440
+  thursday: true
 
 taco_tuesday:
-  name: "Taco tuesday"
+  name: "Taco Tuesday"
   cost: 1
   start_time: 900
   end_time: 1200
+  tuesday: true
 
 thai_lunch_special:
   name: "Lunch special"
   cost: 7
   start_time: 660
   end_time: 900
+  sunday: true
+  monday: true
+  tuesday: true
+  wednesday: true
+  thursday: true
+  friday: true
+  saturday: true
