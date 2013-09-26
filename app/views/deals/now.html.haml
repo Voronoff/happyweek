@@ -1,0 +1,6 @@
+- @deals.each do |deal|
+  %p
+    -if deal.venue
+      =deal.name + ' @ ' + deal.venue.name
+    -else
+      =deal.name

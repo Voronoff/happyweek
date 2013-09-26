@@ -46,16 +46,12 @@ describe Deal do
 
   describe ".current_deals" do
 
-    before do
-      Timecop.freeze(DateTime.strptime(DAY_DATES[:thursday].strftime('%d%m%y') + ' 13:30 ' + TIME_ZONE, '%d%m%y %H:%M %Z'))
-      $stderr.puts DateTime.now.strftime('%A %H:%M')
-    end
-
     after do
       Timecop.return
     end
 
     it "finds the current deals" do
+      Timecop.freeze(DateTime.strptime(DAY_DATES[:thursday].strftime('%d%m%y') + ' 13:30 ' + TIME_ZONE, '%d%m%y %H:%M %Z'))
       expect(Deal.current_deals).to have(2).records
       expect(Deal.current_deals.where(:name => "Monkey head")).to have(1).record
     end

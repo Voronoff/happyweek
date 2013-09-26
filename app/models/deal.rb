@@ -10,7 +10,8 @@ class Deal < ActiveRecord::Base
 	end
 
 	def self.time_i_to_str(time)
-		time_string = ((time / 60).to_i % 12).to_s + ':' + (time % 60).to_s
+		minutes = sprintf '%02d', (time % 60)
+		time_string = ((time / 60).to_i % 12).to_s + ':' + minutes
 		if time < 720
 			time_string += " AM" 
 		else 
@@ -27,6 +28,6 @@ class Deal < ActiveRecord::Base
 
 	def self.deals_at_time(day, time_string)
 		time = Deal.time_str_to_i(time_string)
-		Deal.where("#{day.downcase} <> 'false' AND start_time <= :time AND end_time > :time", {time: time})
+		Deal.where(day.downcase.to_sym => true).where("start_time <= :time AND end_time > :time", {time: time})
 	end
 end
