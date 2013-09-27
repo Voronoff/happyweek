@@ -1,6 +1,11 @@
-- @deals.each do |deal|
-  %p
-    -if deal.venue
-      =deal.name + ' @ ' + deal.venue.name
-    -else
-      =deal.name
+%div.container
+  %div.row
+    %div.col-md-4
+      %p hello
+    %div.col-md-8
+      - @deals.each do |deal|
+        %p
+          -if deal.venue
+            =deal.name + ' @ ' + deal.venue.name
+          -else
+            =deal.name
