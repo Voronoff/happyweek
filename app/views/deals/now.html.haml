@@ -1,11 +1,12 @@
 %div.container
   %div.row
     %div.col-md-4
-      %p hello
+      %h1 HappyWeek
     %div.col-md-8
-      - @deals.each do |deal|
-        %p
-          -if deal.venue
-            =deal.name + ' @ ' + deal.venue.name
-          -else
-            =deal.name
+      = "Deals for " + @day + " at " + @time
+      - @deal_sets.each do |deal_set|
+        %div
+          %div=deal_set.first.name + ' @ ' + deal_set.first.venue.name
+          %p
+            -deal_set.each do |deal|
+              =deal.summary

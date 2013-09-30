@@ -34,4 +34,16 @@ class Deal < ActiveRecord::Base
 		time = Deal.time_str_to_i(time_string)
 		Deal.where(day.downcase.to_sym => true).where("start_time <= :time AND end_time > :time", {time: time})
 	end
+  
+  def self.build_deal_sets(deals)
+    deal_sets = []
+    venues = deals.pluck(:venue_id).uniq
+    venues.each do |venue|
+      deal_names = deals.where(:venue_id => venue).pluck(:name).uniq
+      deal_names.each do |deal_name|
+        deal_sets += [deals.where(:venue_id => venue, :name => deal_name)]
+      end
+    end
+    return deal_sets
+  end
 end
