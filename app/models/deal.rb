@@ -1,6 +1,10 @@
 class Deal < ActiveRecord::Base
 	belongs_to :venue
 
+  validates :venue_id, :presence => {:message => 'Deal must be assigned to a venue.'}
+  validates :name, :presence => {:message => 'Deal must have a name.'}
+  validates :summary, :presence => {:message => 'Deal must be assigned to a venue.'}
+
 	def self.time_str_to_i(time_string)
 		time_string, period = time_string.split(' ')
 		time_array = time_string.split(':')
@@ -23,7 +27,7 @@ class Deal < ActiveRecord::Base
 	def self.current_deals
 		day = DateTime.now.strftime('%A')
 		time = Deal.time_i_to_str((Time.now.seconds_since_midnight.to_i / 60).to_i)
-		self.deals_at_time(day, time)
+		return [self.deals_at_time(day, time), day, time]
 	end
 
 	def self.deals_at_time(day, time_string)
