@@ -1,0 +1,99 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1287" measuredH="1030" mockupW="1280" mockupH="1024">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="7" y="6" w="1280" h="1024" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>HappyWeek%0Ahttp%3A//happyweek.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Title" x="44" y="118" w="240" h="-1" measuredW="215" measuredH="43" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>HappyWeek</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::SubTitle" x="52" y="176" w="260" h="-1" measuredW="249" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Daily%20and%20weekly%20deals</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="__group__" x="467" y="172" w="237" h="74" measuredW="237" measuredH="74" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="232" h="34" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="13"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Link" x="15" y="8" w="-1" h="-1" measuredW="67" measuredH="19" zOrder="1" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Happy%20hour</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="85" y="7" w="-1" h="-1" measuredW="20" measuredH="21" zOrder="2" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>%20@%20</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Link" x="103" y="8" w="-1" h="-1" measuredW="58" measuredH="19" zOrder="3" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>the%20venue</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="161" y="53" w="76" h="-1" measuredW="76" measuredH="21" zOrder="4" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>until%207%3A00%20pm</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Paragraph" x="0" y="42" w="232" h="32" measuredW="200" measuredH="80" zOrder="5" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Buy%201%20drink%20get%201%20free</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="14" controlTypeID="__group__" x="467" y="120" w="244" h="281" measuredW="244" measuredH="281" zOrder="4" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="141" w="232" h="34" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="14"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Link" x="15" y="149" w="-1" h="-1" measuredW="82" measuredH="19" zOrder="1" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>Taco%20Tuesday</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="97" y="148" w="-1" h="-1" measuredW="20" measuredH="21" zOrder="2" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>%20@%20</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Link" x="120" y="149" w="-1" h="-1" measuredW="86" measuredH="19" zOrder="3" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>mexican%20place</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="156" y="230" w="76" h="-1" measuredW="76" measuredH="21" zOrder="5" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>until%207%3A00%20pm</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Paragraph" x="0" y="183" w="232" h="98" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>--%241%20tacos%0A--%242%20corona%0A-%244%20sangria%0A%20%0A-%242%20tecate</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="0" y="3" w="-1" h="-1" measuredW="53" measuredH="21" zOrder="6" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>Deals%20at%20</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="59" y="0" w="-1" h="-1" measuredW="63" measuredH="27" zOrder="7" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>6%3A00%20PM</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="132" y="3" w="-1" h="-1" measuredW="75" measuredH="21" zOrder="8" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>%28now%5B%3A%205%3A30%5D%29</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="156" y="260" w="88" h="-1" measuredW="77" measuredH="21" zOrder="9" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>until%208%3A00%20pm</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
