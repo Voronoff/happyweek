@@ -10,12 +10,15 @@ class TimeTransformer
 
   def self.i_to_str(time)
     minutes = sprintf '%02d', (time % 60)
-    time_string = ((time / 60).to_i % 12).to_s + ':' + minutes
+    hours = ((time / 60).to_i % 12)
+    hours = 12 if hours == 0
+    time_string = hours.to_s + ':' + minutes
     if time < 720
       time_string += " AM" 
     else 
       time_string += " PM"
     end
+
     return time_string
   end
 
