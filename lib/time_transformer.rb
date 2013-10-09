@@ -3,8 +3,9 @@ class TimeTransformer
   def self.str_to_i(time_string)
     time_string, period = time_string.split(' ')
     time_array = time_string.split(':')
+    time_array[0] = '0' if time_array[0] == '12'
     time = (time_array[0].to_i * 60) + time_array[1].to_i
-    time += 720 if period == "PM" && time_string != "12:00"
+    time += 720 if period == "PM"
     time = 1440 if period == "AM" && time_string == "12:00"
     return time
   end
