@@ -1,9 +1,7 @@
 class DealsController < ApplicationController
   def now
-    current_deals = Deal.current_deals
-    deals = current_deals[0]
-    @day = current_deals[1]
-    @time = current_deals[2]
-    @deal_sets = Deal.build_deal_sets(deals) 
+    @deals = Deal.current_deals
+    @day = DateTime.now.strftime('%A')
+    @time = TimeTransformer.i_to_str((Time.now.seconds_since_midnight.to_i / 60).to_i)
   end
 end

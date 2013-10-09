@@ -4,9 +4,12 @@
       %h1 HappyWeek
     %div.col-md-8
       = "Deals for " + @day + " at " + @time
-      - @deal_sets.each do |deal_set|
-        %div
-          %div=deal_set.first.name + ' @ ' + deal_set.first.venue.name
-          %p
-            -deal_set.each do |deal|
-              =deal.summary
+      -if @deals.first
+        - @deals.each do |deal|
+          %div
+            %div=deal.name + ' @ ' + deal.venue.name
+            %p
+              -deal.items.each do |deal|
+                =deal.summary
+      -else
+        No deals at this time!

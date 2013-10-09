@@ -36,4 +36,4 @@ Happyweek::Application.configure do
   config.active_support.deprecation = :stderr
 end
 # Setting "now" to Thu, 26 Sep 2013 2:30:00 PM +PST/PDT 
-# Timecop.travel(Time.local(2013, 9, 26, 14, 30, 0))
+Timecop.freeze(Time.local(2013, 9, 26, 14, 30, 0))

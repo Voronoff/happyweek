@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925031243) do
+ActiveRecord::Schema.define(version: 20131004074140) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 20130925031243) do
   create_table "deals", force: true do |t|
     t.integer  "venue_id"
     t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.integer  "deal_id"
     t.integer  "start_time"
     t.integer  "end_time"
     t.string   "category"
@@ -57,7 +64,6 @@ ActiveRecord::Schema.define(version: 20130925031243) do
     t.float    "discount"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "description"
     t.string   "summary"
     t.boolean  "sunday"
     t.boolean  "monday"
