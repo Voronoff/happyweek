@@ -1,15 +1,23 @@
+-require 'time_transformer'
 %div.container
   %div.row
     %div.col-md-4
       %h1 HappyWeek
-    %div.col-md-8
+    %div.col-md-4
       = "Deals for " + @day + " at " + @time
-      -if @deals.first
-        - @deals.each do |deal|
-          %div
-            %div=deal.name + ' @ ' + deal.venue.name
-            %p
-              -deal.items.each do |deal|
-                =deal.summary
-      -else
-        No deals at this time!
+      - @deals.each do |deal|
+        %div
+          %div.well.text-center.deal_header=deal.name + ' @ ' + deal.venue.name
+          %div.deal_items
+            -time = TimeTransformer.str_to_i(@time)
+            -items = deal.items.where("end_time > :time", {time: time})
+            -items.pluck(:end_time).uniq.sort.each do |end_time|
+              -items_at_end_time = items.where("end_time = :end_time", {end_time: end_time})
+              -items_at_end_time.pluck(:start_time).uniq.sort.each do |start_time|
+                -items_at_start_time = items_at_end_time.where("start_time = :start_time", {start_time: start_time})
+                -items_at_start_time.each_index do |i|
+                  %li=items_at_start_time[i].summary
+                  -if i == items_at_start_time.length - 1
+                    %p.text-right
+                      =TimeTransformer.i_to_str(start_time) if start_time > time
+                      =" til " + TimeTransformer.i_to_str(end_time)
