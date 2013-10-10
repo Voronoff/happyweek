@@ -1,0 +1,6 @@
+-item_set.each_index do |i|
+  %li=item_set[i].summary
+  -if i == item_set.length - 1
+    %p.text-right
+      =TimeTransformer.i_to_str(start_time) if defined? start_time
+      =" til " + TimeTransformer.i_to_str(end_time)
