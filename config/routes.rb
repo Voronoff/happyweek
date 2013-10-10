@@ -2,6 +2,8 @@ Happyweek::Application.routes.draw do
   root :to => 'deals#now'
 
   get '/deals_at_time/:day/:time', to: 'deals#deals_at_time'
+  get '/deals_at_time/now', to: 'deals#now'
+  get '/find_deals_at_time/', to: 'deals#find_deals_at_time'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

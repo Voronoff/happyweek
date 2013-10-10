@@ -6,8 +6,8 @@
     %div.col-md-4
       -hours = @time.split(':')[0]
       -minutes = @time.split(':')[1].split(' ')[0]
-      -meridiem = @time.split(' ')[0]
-      %form.form-inline#day_time_form{:action => '/', :method => 'get', :role => 'form'}
+      -meridiem = @time.split(' ')[1]
+      %form.form-inline#day_time_form{:action => '/find_deals_at_time/', :method => 'get', :role => 'form'}
         ="Deals for " 
         %div.form-group
           %label.sr-only{:for => 'day_selector'} day
@@ -15,15 +15,14 @@
         =" at "
         %div.form-group
           %label.sr-only{:for => 'hours_field'} hours
-          %input.form-control#hours_field{:type => 'text', :placeholder => "#{hours}"}
+          %input.form-control#hours_field{:type => 'text', :value => "#{hours}", :name => "hours"}
         =":"
         %div.form-group
           %label.sr-only{:for => 'minutes_field'} minutes
-          %input.form-control#minutes_field{:type => 'text', :placeholder => "#{minutes}"}
+          %input.form-control#minutes_field{:type => 'text', :value => "#{minutes}", :name => "minutes"}
         %div.form-group
           %label.sr-only{:for => 'meridiem_field'} meridiem
           =select_tag(:meridiem, options_for_select(["AM", "PM"], meridiem), id: 'meridiem_field', class: 'form-control')
-        / %input{:type => 'hidden', :name => 'time'}
         %button.btn.btn-default#day_time_form_submit{:type => 'submit'} Find
       - @deals.each do |deal|
         %div
