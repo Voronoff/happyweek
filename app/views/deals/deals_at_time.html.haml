@@ -4,7 +4,27 @@
     %div.col-md-4
       %h1 HappyWeek
     %div.col-md-4
-      = "Deals for " + @day + " at " + @time
+      -hours = @time.split(':')[0]
+      -minutes = @time.split(':')[1].split(' ')[0]
+      -meridiem = @time.split(' ')[0]
+      %form.form-inline#day_time_form{:action => '/', :method => 'get', :role => 'form'}
+        ="Deals for " 
+        %div.form-group
+          %label.sr-only{:for => 'day_selector'} day
+          =select_tag(:day, options_for_select(["Today", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], @day), id: 'day_selector', class: 'form-control')
+        =" at "
+        %div.form-group
+          %label.sr-only{:for => 'hours_field'} hours
+          %input.form-control#hours_field{:type => 'text', :placeholder => "#{hours}"}
+        =":"
+        %div.form-group
+          %label.sr-only{:for => 'minutes_field'} minutes
+          %input.form-control#minutes_field{:type => 'text', :placeholder => "#{minutes}"}
+        %div.form-group
+          %label.sr-only{:for => 'meridiem_field'} meridiem
+          =select_tag(:meridiem, options_for_select(["AM", "PM"], meridiem), id: 'meridiem_field', class: 'form-control')
+        / %input{:type => 'hidden', :name => 'time'}
+        %button.btn.btn-default#day_time_form_submit{:type => 'submit'} Find
       - @deals.each do |deal|
         %div
           %div.well.text-center.deal_header=deal.name + ' @ ' + deal.venue.name
