@@ -6,6 +6,7 @@ Happyweek::Application.routes.draw do
   get '/find_deals_at_time', to: 'deals#find_deals_at_time'
   get '/deals/:id', to: 'deals#show'
 
+  get '/venues/:id', to: 'venues#show'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.

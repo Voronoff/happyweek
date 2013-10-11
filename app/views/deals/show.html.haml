@@ -3,8 +3,9 @@
 %div.row
   %div.col-md-6.col-md-offset-2.text-center
     %h2=deal.name
-    %div="@ " + deal.venue.name
-    / =link_to @deal.venue.name, controller: "venues", action: "show", id: @deal.venue.id
+    %div
+      ="@ "
+      =link_to deal.venue.name, controller: "venues", action: "show", id: deal.venue.id
     %div
       =deal.days_string
       %br

@@ -1,0 +1,17 @@
+-venue = @venue.first
+%div.row
+  %div.col-md-6.col-md-offset-2.text-center
+    %h2=venue.name
+    %address
+      =venue.address
+      %br
+      =venue.city
+      %br
+%div.row
+  %div.col-md-12
+    %div
+      -venue.deals.each do |deal| 
+        =link_to deal.name, controller: "deals", action: "show", id: deal.id
+    %div
+      -venue.description.split('\n\n').each do |paragraph|
+        %p=paragraph
