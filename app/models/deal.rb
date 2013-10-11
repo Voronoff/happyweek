@@ -7,8 +7,6 @@ class Deal < ActiveRecord::Base
   validates :name, :presence => {:message => 'Deal must have a name.'}
 
   scope :items_at_time, ->(time) {where("items.start_time <= :time AND items.end_time > :time", {time: time})}
-  scope :items_on_day, ->(day) {where(items: {day.downcase.to_sym => true})}
-  scope :items_at, ->(day, time) {items_on_day(day).items_at_time(time)}
 
   def self.current_deals
     day = DateTime.now.strftime('%A')
@@ -18,7 +16,7 @@ class Deal < ActiveRecord::Base
 
   def self.deals_at_time(day, time_string)
     time = TimeTransformer.str_to_i(time_string)
-    Deal.joins(:items).items_at(day, time).includes(:items)
+    Deal.joins(:items).where(day.downcase.to_sym => true).items_at_time(time).includes(:items)
   end
 
 end

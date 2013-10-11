@@ -3,44 +3,27 @@ bottomless_mimosas:
   cost: 10.00
   start_time: 480
   end_time: 660
-  sunday: true
 
 monkey_head:
   deal_id: 2
   cost: 9.00
   start_time: 720
   end_time: 1439
-  thursday: true
 
 taco_tuesday:
   deal_id: 3
   cost: 1
   start_time: 900
   end_time: 1200
-  tuesday: true
 
 snacks:
   deal_id: 4
   cost: 0
   start_time: 0
   end_time: 1439
-  sunday: true
-  monday: true
-  tuesday: true
-  wednesday: true
-  thursday: true
-  friday: true
-  saturday: true
 
 midnight_snacks:
   deal_id: 4
   cost: 0
   start_time: 0
   end_time: 60
-  sunday: true
-  monday: true
-  tuesday: true
-  wednesday: true
-  thursday: true
-  friday: true
-  saturday: true

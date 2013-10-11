@@ -1,15 +1,25 @@
 bottomless_mimosas:
   id: 1
-  name: "Bottomless mimosas"
+  name: "Bottomless Mimosas"
+  sunday: true
 
 monkey_head:
   id: 2
-  name: "Monkey head"
+  name: "Monkey Head"
+  thursday: true
 
 taco_tuesday:
   id: 3
   name: "Taco Tuesday"
+  tuesday: true
 
 snacks_from_home:
   id: 4
   name: "Snacks From Home"
+  sunday: true
+  monday: true
+  tuesday: true
+  wednesday: true
+  thursday: true
+  friday: true
+  saturday: true

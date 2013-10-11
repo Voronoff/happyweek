@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131004074140) do
+ActiveRecord::Schema.define(version: 20131011014832) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 20131004074140) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "sunday"
+    t.boolean  "monday"
+    t.boolean  "tuesday"
+    t.boolean  "wednesday"
+    t.boolean  "thursday"
+    t.boolean  "friday"
+    t.boolean  "saturday"
   end
 
   create_table "items", force: true do |t|
@@ -65,13 +72,6 @@ ActiveRecord::Schema.define(version: 20131004074140) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "summary"
-    t.boolean  "sunday"
-    t.boolean  "monday"
-    t.boolean  "tuesday"
-    t.boolean  "wednesday"
-    t.boolean  "thursday"
-    t.boolean  "friday"
-    t.boolean  "saturday"
   end
 
   create_table "venues", force: true do |t|
