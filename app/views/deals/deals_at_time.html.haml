@@ -22,7 +22,9 @@
     %button.btn.btn-default#day_time_form_submit{:type => 'submit'} Find
   - @deals.each do |deal|
     %div
-      %div.well.text-center.deal_header=deal.name + ' @ ' + deal.venue.name
+      %div.well.text-center.deal_header
+        = link_to deal.name, controller: "deals", action: "show", id: deal.id
+        =' @ ' + deal.venue.name
       %div.deal_items
         -time = TimeTransformer.str_to_i(@time)
         -items = deal.items.where("end_time > :time", {time: time})
