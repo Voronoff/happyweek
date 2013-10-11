@@ -1,41 +1,37 @@
 -require 'time_transformer'
-%div.container
-  %div.row
-    %div.col-md-4
-      %h1 HappyWeek
-    %div.col-md-4
-      -hours = @time.split(':')[0]
-      -minutes = @time.split(':')[1].split(' ')[0]
-      -meridiem = @time.split(' ')[1]
-      %form.form-inline#day_time_form{:action => '/find_deals_at_time/', :method => 'get', :role => 'form'}
-        ="Deals for " 
-        %div.form-group
-          %label.sr-only{:for => 'day_selector'} day
-          =select_tag(:day, options_for_select(["Today", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], @day), id: 'day_selector', class: 'form-control')
-        =" at "
-        %div.form-group
-          %label.sr-only{:for => 'hours_field'} hours
-          %input.form-control#hours_field{:type => 'text', :value => "#{hours}", :name => "hours"}
-        =":"
-        %div.form-group
-          %label.sr-only{:for => 'minutes_field'} minutes
-          %input.form-control#minutes_field{:type => 'text', :value => "#{minutes}", :name => "minutes"}
-        %div.form-group
-          %label.sr-only{:for => 'meridiem_field'} meridiem
-          =select_tag(:meridiem, options_for_select(["AM", "PM"], meridiem), id: 'meridiem_field', class: 'form-control')
-        %button.btn.btn-default#day_time_form_submit{:type => 'submit'} Find
-      - @deals.each do |deal|
-        %div
-          %div.well.text-center.deal_header=deal.name + ' @ ' + deal.venue.name
-          %div.deal_items
-            -time = TimeTransformer.str_to_i(@time)
-            -items = deal.items.where("end_time > :time", {time: time})
-            -items.pluck(:end_time).uniq.sort.each do |end_time|
-              -items_at_end_time = items.where("end_time = :end_time", {end_time: end_time})
-              -start_times = items_at_end_time.pluck(:start_time).uniq.sort
-              -start_times = start_times.drop_while {|i| i <= time}
-              -items_at_start_time = items_at_end_time.where("start_time <= :time", {time: time})
-              = render 'items_at_start_time', :item_set => items_at_start_time, :end_time => end_time
-              -start_times.each do |start_time|
-                -items_at_start_time = items_at_end_time.where("start_time = :start_time", {start_time: start_time})
-                = render 'items_at_start_time', :item_set => items_at_start_time, :start_time => start_time, :end_time => end_time
+%div.col-md-6
+  -hours = @time.split(':')[0]
+  -minutes = @time.split(':')[1].split(' ')[0]
+  -meridiem = @time.split(' ')[1]
+  %form.form-inline#day_time_form{:action => '/find_deals_at_time/', :method => 'get', :role => 'form'}
+    ="Deals for " 
+    %div.form-group
+      %label.sr-only{:for => 'day_selector'} day
+      =select_tag(:day, options_for_select(["Today", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], @day), id: 'day_selector', class: 'form-control')
+    =" at "
+    %div.form-group
+      %label.sr-only{:for => 'hours_field'} hours
+      %input.form-control#hours_field{:type => 'text', :value => "#{hours}", :name => "hours"}
+    =":"
+    %div.form-group
+      %label.sr-only{:for => 'minutes_field'} minutes
+      %input.form-control#minutes_field{:type => 'text', :value => "#{minutes}", :name => "minutes"}
+    %div.form-group
+      %label.sr-only{:for => 'meridiem_field'} meridiem
+      =select_tag(:meridiem, options_for_select(["AM", "PM"], meridiem), id: 'meridiem_field', class: 'form-control')
+    %button.btn.btn-default#day_time_form_submit{:type => 'submit'} Find
+  - @deals.each do |deal|
+    %div
+      %div.well.text-center.deal_header=deal.name + ' @ ' + deal.venue.name
+      %div.deal_items
+        -time = TimeTransformer.str_to_i(@time)
+        -items = deal.items.where("end_time > :time", {time: time})
+        -items.pluck(:end_time).uniq.sort.each do |end_time|
+          -items_at_end_time = items.where("end_time = :end_time", {end_time: end_time})
+          -start_times = items_at_end_time.pluck(:start_time).uniq.sort
+          -start_times = start_times.drop_while {|i| i <= time}
+          -items_at_start_time = items_at_end_time.where("start_time <= :time", {time: time})
+          = render 'items_at_start_time', :item_set => items_at_start_time, :end_time => end_time
+          -start_times.each do |start_time|
+            -items_at_start_time = items_at_end_time.where("start_time = :start_time", {start_time: start_time})
+            = render 'items_at_start_time', :item_set => items_at_start_time, :start_time => start_time, :end_time => end_time
