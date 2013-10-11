@@ -19,7 +19,7 @@ class DealsController < ApplicationController
     current_time = Time.now.seconds_since_midnight.to_i / 60
     current_day = DateTime.now.strftime('%A')
     current_meridiem = Time.now.strftime('%p') 
-    if (params[:day] ==  current_day || params[:day] == 'Today') && (timestring == ': ' + current_meridiem || timestring == TimeTransformer.i_to_str(current_time))
+    if (params[:day] ==  current_day || params[:day] == 'Today') && timestring == TimeTransformer.i_to_str(current_time)
       redirect_to "/deals_at_time/now"
     else
       params[:day] == "Today" ? day = current_day : day = params[:day] 
@@ -33,5 +33,7 @@ class DealsController < ApplicationController
       redirect_to "/deals_at_time/#{day}/#{time}"
     end
   end
-
+  def show
+    @deal = Deal.where(:id => params[:id]).includes(:items)
+  end
 end
