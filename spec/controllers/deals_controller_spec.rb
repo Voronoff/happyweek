@@ -39,9 +39,9 @@ describe DealsController do
     it "redirects to /deals_at_time/now if there is no user entered data" do
       expect(DateTime.now.strftime('%A')).to eql("Thursday")
       expect(DateTime.now.strftime('%p')).to eql("PM")
-      get :find_deals_at_time, {:day => "Thursday", :hours => "", :minutes => "", :meridiem => "PM"}
+      get :find_deals_at_time, {:day => "Thursday", :hours => "2", :minutes => "30", :meridiem => "PM"}
       expect(response).to redirect_to("/deals_at_time/now")
-      get :find_deals_at_time, {:day => "Today", :hours => "", :minutes => "", :meridiem => "PM"}
+      get :find_deals_at_time, {:day => "Today", :hours => "2", :minutes => "30", :meridiem => "PM"}
       expect(response).to redirect_to("/deals_at_time/now")
     end
     it "redirects to /deals_at_time/:day/:time if there is user entered data" do
@@ -59,6 +59,17 @@ describe DealsController do
       expect(response).to redirect_to("/deals_at_time/Tuesday/30")
       get :find_deals_at_time, {:day => "Tuesday", :hours => "12", :minutes => "30", :meridiem => "PM"}
       expect(response).to redirect_to("/deals_at_time/Tuesday/750")
+    end
+  end
+
+  describe "GET /deals/:id" do
+    it "assigns @deal by id" do
+      get :show, :id => "1"
+      expect(assigns(:deal)).to eq(Deal.where(:id => 1))
+    end
+    it "renders show" do
+      get :show, :id => "1"
+      expect(response).to render_template("show")
     end
   end
 

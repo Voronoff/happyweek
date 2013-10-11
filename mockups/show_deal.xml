@@ -1,0 +1,105 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1287" measuredH="1030" mockupW="1280" mockupH="1024">
+  <controls>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="9" y="6" w="1028" h="756" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>HappyWeek%0Ahttp%3A//happyweekfinds.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="7" y="6" w="1280" h="1024" measuredW="450" measuredH="400" zOrder="1" locked="true" isInGroup="-1">
+      <controlProperties>
+        <text>HappyWeek%0Ahttp%3A//happyweek.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Title" x="45" y="120" w="240" h="-1" measuredW="215" measuredH="43" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>HappyWeek</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::SubTitle" x="55" y="175" w="260" h="-1" measuredW="249" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Daily%20and%20weekly%20deals</text>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="__group__" x="573" y="128" w="162" h="71" measuredW="162" measuredH="71" zOrder="4" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::SubTitle" x="0" y="0" w="-1" h="-1" measuredW="149" measuredH="27" zOrder="0" locked="false" isInGroup="60">
+          <controlProperties>
+            <text>Name%20of%20Deal</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="29" y="27" w="90" h="21" measuredW="90" measuredH="21" zOrder="1" locked="false" isInGroup="60">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="12" measuredH="21" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>@</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Link" x="18" y="1" w="-1" h="-1" measuredW="72" measuredH="19" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>venue%20name</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="17" y="50" w="-1" h="-1" measuredW="145" measuredH="21" zOrder="2" locked="false" isInGroup="60">
+          <controlProperties>
+            <text>HH%3AMM%20PM%20to%20HH%3AMM%20PM</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="61" controlTypeID="__group__" x="434" y="227" w="178" h="90" measuredW="178" measuredH="90" zOrder="5" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="178" measuredH="21" zOrder="0" locked="false" isInGroup="61">
+          <controlProperties>
+            <text>From%20HH%3AMM%20PM%20to%20HH%3AMM%20PM</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="27" w="-1" h="-1" measuredW="44" measuredH="21" zOrder="1" locked="false" isInGroup="61">
+          <controlProperties>
+            <text>-%20item%201</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="15" y="48" w="-1" h="-1" measuredW="47" measuredH="21" zOrder="2" locked="false" isInGroup="61">
+          <controlProperties>
+            <text>-%20item%202</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="15" y="69" w="-1" h="-1" measuredW="46" measuredH="21" zOrder="3" locked="false" isInGroup="61">
+          <controlProperties>
+            <text>-%20item%203</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="62" controlTypeID="__group__" x="434" y="339" w="178" h="90" measuredW="178" measuredH="90" zOrder="6" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="178" measuredH="21" zOrder="0" locked="false" isInGroup="62">
+          <controlProperties>
+            <text>From%20HH%3AMM%20PM%20to%20HH%3AMM%20PM</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="27" w="-1" h="-1" measuredW="44" measuredH="21" zOrder="1" locked="false" isInGroup="62">
+          <controlProperties>
+            <text>-%20item%201</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="15" y="48" w="-1" h="-1" measuredW="47" measuredH="21" zOrder="2" locked="false" isInGroup="62">
+          <controlProperties>
+            <text>-%20item%202</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="15" y="69" w="-1" h="-1" measuredW="46" measuredH="21" zOrder="3" locked="false" isInGroup="62">
+          <controlProperties>
+            <text>-%20item%203</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::TextArea" x="434" y="444" w="627" h="526" measuredW="200" measuredH="140" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Donec%20interdum%20justo%20placerat%2C%20porta%20nisi%20id%2C%20tincidunt%20est.%20Praesent%20non%20facilisis%20orci%2C%20vitae%20congue%20justo.%20Praesent%20eget%20eleifend%20justo.%20Vivamus%20ut%20tempor%20nunc.%20Fusce%20ut%20enim%20dolor.%20Nullam%20pellentesque%20pharetra%20ipsum%20ac%20scelerisque.%20Quisque%20vehicula%20mollis%20eros%2C%20at%20blandit%20ante%20aliquam%20vitae.%0A%20%0AFusce%20ac%20lectus%20elit.%20Vivamus%20ut%20ullamcorper%20risus.%20Pellentesque%20non%20congue%20felis%2C%20sit%20amet%20tempor%20tellus.%20Donec%20id%20neque%20est.%20Morbi%20faucibus%20tincidunt%20nisl%20a%20ullamcorper.%20Aliquam%20pharetra%20vel%20purus%20pellentesque%20dignissim.%20Aenean%20rutrum%20sit%20amet%20sem%20sit%20amet%20interdum.%20Nullam%20vel%20lorem%20eget%20lorem%20pellentesque%20scelerisque%20ac%20vitae%20lorem.%0A%20%0ADuis%20vitae%20dolor%20a%20felis%20mollis%20sagittis%20aliquet%20interdum%20urna.%20Quisque%20lectus%20arcu%2C%20interdum%20sit%20amet%20fringilla%20non%2C%20volutpat%20quis%20magna.%20Nulla%20nec%20vestibulum%20turpis.%20Sed%20magna%20lectus%2C%20convallis%20eu%20facilisis%20vitae%2C%20ultricies%20sit%20amet%20quam.%20In%20sollicitudin%20lobortis%20porttitor.%20Quisque%20in%20erat%20bibendum%2C%20sodales%20leo%20sollicitudin%2C%20scelerisque%20odio.%20Vestibulum%20ante%20ipsum%20primis%20in%20faucibus%20orci%20luctus%20et%20ultrices%20posuere%20cubilia%20Curae%3B%20Nunc%20lacinia%20orci%20id%20nisi%20ultrices%2C%20a%20dictum%20ipsum%20dignissim.%20Aenean%20accumsan%20odio%20at%20feugiat%20tempor.%0A%20%0ACurabitur%20congue%20mi%20cursus%2C%20sagittis%20nisl%20faucibus%2C%20blandit%20enim.%20Vestibulum%20gravida%20urna%20eget%20nulla%20dapibus%20dapibus.%20Nunc%20eget%20dignissim%20mi.%20Maecenas%20cursus%20metus%20sed%20mauris%20ullamcorper%2C%20in%20mollis%20ligula%20feugiat.%20Quisque%20vulputate%20tortor%20vitae%20nunc%20porta%20cursus.%20Etiam%20enim%20sem%2C%20sagittis%20vel%20ipsum%20et%2C%20aliquam%20porta%20lorem.%20In%20rutrum%20dictum%20dui%2C%20vitae%20tincidunt%20quam%20sagittis%20non.%20Vivamus%20tincidunt%20volutpat%20ipsum%2C%20varius%20ornare%20erat%20semper%20sit%20amet.%20Vestibulum%20sit%20amet%20sem%20quis%20lorem%20molestie%20tempus.%20Vestibulum%20dictum%20nibh%20a%20urna%20elementum%2C%20sit%20amet%20scelerisque%20ligula%20malesuada.%20Nullam%20pulvinar%20leo%20sit%20amet%20egestas%20tincidunt.%0A%20%0APellentesque%20vitae%20nisl%20ut%20elit%20lacinia%20tristique%20vitae%20quis%20lorem.%20Curabitur%20eu%20malesuada%20urna.%20Cras%20eu%20ante%20diam.%20Quisque%20at%20semper%20sapien.%20Sed%20enim%20enim%2C%20fringilla%20sit%20amet%20neque%20nec%2C%20congue%20ultricies%20neque.%20Maecenas%20rhoncus%2C%20odio%20id%20congue%20tempus%2C%20justo%20libero%20pellentesque%20massa%2C%20sed%20tempor%20mi%20quam%20blandit%20lacus.%20Curabitur%20bibendum%20semper%20arcu%20mollis%20vulputate.%20Proin%20vel%20risus%20a%20felis%20mollis%20adipiscing.%20Sed%20viverra%20magna%20ut%20dui%20egestas%20venenatis.%20Cum%20sociis%20natoque%20penatibus%20et%20magnis%20dis%20parturient%20montes%2C%20nascetur%20ridiculus%20mus.%20Phasellus%20luctus%20laoreet%20purus%2C%20ut%20mattis%20arcu%20ultrices%20vel.%20Etiam%20luctus%20orci%20interdum%20ultrices%20suscipit.%20Nulla%20facilisi.%20Curabitur%20et%20consectetur%20felis.</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

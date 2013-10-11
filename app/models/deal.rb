@@ -19,4 +19,15 @@ class Deal < ActiveRecord::Base
     Deal.joins(:items).where(day.downcase.to_sym => true).items_at_time(time).includes(:items)
   end
 
+  def days_string
+    days_string = ""
+    days_string += "Sun " if self.sunday == true
+    days_string += "Mon " if self.monday == true
+    days_string += "Tues " if self.tuesday == true
+    days_string += "Weds " if self.wednesday == true
+    days_string += "Thurs " if self.thursday == true
+    days_string += "Fri " if self.friday == true
+    days_string += "Sat" if self.saturday == true
+    return days_string.rstrip
+  end
 end

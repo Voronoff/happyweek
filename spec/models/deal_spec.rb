@@ -6,7 +6,7 @@ describe Deal do
   fixtures :deals
   fixtures :items
 
-  describe ".deals_at_time" do
+  describe "Deal.deals_at_time" do
     it "finds deals at time x and day y" do
       deals = Deal.deals_at_time('Thursday', '1:30 PM')
       expect(deals).to have(2).records
@@ -29,7 +29,7 @@ describe Deal do
     end
   end
 
-  describe ".current_deals" do
+  describe "Deal.current_deals" do
     current_deals = Deal.current_deals
     it "finds the current deals" do
       expect(current_deals).to have(2).records
@@ -37,6 +37,13 @@ describe Deal do
     end
     it "loads the associated items" do
       current_deals.each {|deal| expect(deal.items.loaded?).to eql(true)}
+    end
+  end
+
+  describe ".days_string" do
+    it "should return a string that represents the days of the deal" do
+      expect(Deal.find_by_name("Monkey Head").days_string).to eql("Thurs")
+      expect(Deal.find_by_name("Snacks From Home").days_string).to eql("Sun Mon Tues Weds Thurs Fri Sat")
     end
   end
 

@@ -1,0 +1,23 @@
+- require 'time_transformer'
+-deal = @deal.first
+%div.row
+  %div.col-md-6.col-md-offset-2.text-center
+    %h2=deal.name
+    %div="@ " + deal.venue.name
+    / =link_to @deal.venue.name, controller: "venues", action: "show", id: @deal.venue.id
+    %div
+      =deal.days_string
+      %br
+      =TimeTransformer.i_to_str(deal.items.pluck(:start_time).sort.first) + " to " + TimeTransformer.i_to_str(deal.items.pluck(:end_time).sort.last) if deal.items.length >= 1
+%div.row
+  %div.col-md-12
+    %div
+      -deal.items.pluck(:start_time).uniq.sort.each do |start_time|
+        -deal.items.pluck(:end_time).uniq.sort.each do |end_time|
+          %div="From " + TimeTransformer.i_to_str(start_time) + " to " + TimeTransformer.i_to_str(end_time)
+          %div
+            -deal.items.where(:start_time => start_time, :end_time => end_time).each do |item|
+              %li=item.summary
+    %div
+      -deal.description.split('\n\n').each do |paragraph|
+        %p=paragraph
